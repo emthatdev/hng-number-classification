@@ -25,6 +25,11 @@ app.get('/api/classify-number', async (req, res) => {
             "number": getTypeOf(req.query.number),
             "error": true,
         });
+    } else if (! Number.isInteger(number)) {
+        return res.status(400).json({
+            "number": "invalid",
+            "error": true,
+        });
     }
 
     let funFact = null;
