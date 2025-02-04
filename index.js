@@ -23,7 +23,7 @@ app.get('/api/classify-number', async (req, res) => {
     let funFact = null;
 
     try {
-        const response = await axios.get(`http://numbersapi.com/${number}`);
+        const response = await axios.get(`http://numbersapi.com/${number}/math`);
         funFact = response.data;
     } catch {
         funFact = "Oops, something went wrong. Couldn't access the fact.";
