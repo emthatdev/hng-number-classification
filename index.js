@@ -73,7 +73,7 @@ const isPrime = (num) => {
 const isPerfect = (num) => {
     if (num < 6 || ! Number.isInteger(num) || isPrime(num) || ! isEven(num)) return false;
     let sumOfDivisors = 0;
-    for (let i = 1; i < num / 2; i++) {
+    for (let i = 1; i <= num / 2; i++) {
         if (num % i === 0) sumOfDivisors += i;
     }
     return num === sumOfDivisors;
