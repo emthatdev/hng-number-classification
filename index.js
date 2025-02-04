@@ -1,13 +1,16 @@
 const express = require("express");
 const app = express();
 const axios = require("axios");
+const cors = require("cors");
 const PORT = process.env.PORT || 3000;
+
+app.use(cors());
 
 app.get('/api/classify-number', async (req, res) => {
     if (! req.query.number) {
         return res.status(400).json({message: "Query parameter 'number' is required"});
     }
-    
+
     const number = Number(req.query.number);
 
     if (isNaN(number)) {
