@@ -8,7 +8,10 @@ app.use(cors());
 
 app.get('/api/classify-number', async (req, res) => {
     if (! req.query.number) {
-        return res.status(400).json({message: "Query parameter 'number' is required"});
+        return res.status(400).json({
+            "number": null,
+            "error": true,
+        });
     }
 
     const number = Number(req.query.number);
