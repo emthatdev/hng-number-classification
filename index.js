@@ -98,11 +98,10 @@ const isArmstrong = (num) => {
 const isEven = (num) => (num % 2 === 0);
 
 const sumOfDigits = (num) => {
-    const numAsString = num.toString();
+    const numAsString = Math.abs(num).toString();
     const numberOfDigits = numAsString.length;
     let sum = 0;
-    let counter = num >= 0 ? 0 : 1;
-    for (let i = counter; i < numberOfDigits; i++) {
+    for (let i = 0; i < numberOfDigits; i++) {
         sum += Number(numAsString[i]);
     }
     return sum;
