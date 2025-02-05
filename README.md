@@ -43,7 +43,7 @@ The server should now be running at `http://localhost:3000` or on whatever port 
 
 ### 1. Get Properties of Number
 ```http
-GET /classify-number?number={371}
+GET /classify-number?number=371
 ```
 **Response:**
 ```json
